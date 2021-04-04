@@ -15,5 +15,10 @@ export const CustomInput = styled.TextInput`
   flex: 1;
   font-size: 16px;
   margin-left: 10px;
+  margin-right: 10px;
   color: #268596;
 `; 
+
+export const HidePassButtton = styled.TouchableOpacity`
+  margin-right: 16px;
+`;

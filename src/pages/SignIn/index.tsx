@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Container,
   InputArea,
@@ -18,6 +18,9 @@ import EmailIcon from "../../assets/email.svg";
 import PassIcon from "../../assets/lock.svg";
 
 function SignIn() {
+  const [pass, setPass] = useState('');
+  const [email, setEmail] = useState('');
+  
   return (
     <Container>
       <BarberLogo width="100%" height="160" />
@@ -26,11 +29,17 @@ function SignIn() {
         <Input 
           IconSvg={ EmailIcon } 
           placeholder="Digite o seu email"
+          value={email}
+          onChangeText={value => setEmail(value)}
+          type="email"
         />
 
         <Input 
           IconSvg={ PassIcon }
           placeholder="Digite sua senha"
+          value={pass}
+          onChangeText={value => setPass(value)}
+          type="password"
         />
 
         <CustomButton>

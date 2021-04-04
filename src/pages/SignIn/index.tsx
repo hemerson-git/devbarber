@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React, { useState } from "react";
 import {
   Container,
@@ -21,6 +22,18 @@ function SignIn() {
   const [pass, setPass] = useState('');
   const [email, setEmail] = useState('');
   
+  const navigation = useNavigation();
+  
+  function handleSigninPress() {
+    alert('Clicou')
+  }
+  
+  function handleSignupMessagePress() {
+    navigation.reset({
+      routes: [{name: 'SignUp'}]
+    });
+  }
+  
   return (
     <Container>
       <BarberLogo width="100%" height="160" />
@@ -42,12 +55,16 @@ function SignIn() {
           type="password"
         />
 
-        <CustomButton>
+        <CustomButton
+          onPress={handleSigninPress}
+        >
           <CustomButtonText> Login </CustomButtonText>
         </CustomButton>
       </InputArea>
 
-      <SignMessageButton>
+      <SignMessageButton
+        onPress={handleSignupMessagePress}
+      >
         <SignMessageButtonText>Ainda não possui uma conta?</SignMessageButtonText>
         <SignMessageButtonTextBold>Cadastre-se</SignMessageButtonTextBold>
       </SignMessageButton>

@@ -44,6 +44,7 @@ function Input({
           <MaterialCommunityIcons 
             name={!hideFieldContent ? "eye" : "eye-off"} 
             size={20}
+            color="#268596"
           />
         </HidePassButtton>
       )}

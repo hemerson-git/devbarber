@@ -1,16 +1,19 @@
-import 'react-native-gesture-handler';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
-import MainStack from './src/stacks/MainStack';
+import MainStack from "./src/stacks/MainStack";
+import UserContextProvider from "./src/contexts/UserContext";
 
 export default function App() {
   return (
     <NavigationContainer>
       <StatusBar style="auto" />
-      <MainStack />
+      <UserContextProvider>
+        <MainStack />
+      </UserContextProvider>
     </NavigationContainer>
   );
 }
@@ -18,8 +21,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
